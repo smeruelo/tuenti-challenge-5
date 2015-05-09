@@ -25,7 +25,7 @@
   (labels ((clean (ff)
 	     (remove girl (remove-if #'(lambda (x) 
 					 (member x (gethash girl relations) :test #'equal))
-				     (remove-duplicates ff)) :test #'equal))
+				     (remove-duplicates ff :test #'equal)) :test #'equal))
 	   (iter (ff new)
 	     (if new
 		 (iter (append (gethash (car new) relations) ff) (cdr new))
